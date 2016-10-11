@@ -3,8 +3,8 @@ function Class (cls) {
         //var args = arguments.length === 1 ? [arguments[0]] : Array.apply(null, arguments);
         //para = arguments;
         //console.log(arguments);
-        this.ifunc = cls.initialize || function(a, b){};
-        this.ifunc(a, b);
+        var initialize = cls.initialize || function(a, b){};
+        initialize.call(this, a, b);
         //cls.initialize.call(func, a, b);
     }
     func.prototype.getA = function() { return this.a;}
